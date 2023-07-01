@@ -39,17 +39,14 @@ class App extends Component {
 
   render() {
     const {
-      showModal,
+      searchValue,
       modal: { isOpen, visibleData },
     } = this.state;
 
     return (
       <div>
         <Searchbar onSubmit={this.addNamePicture} />
-        <ImageGallery
-          namePicture={this.state.searchValue}
-          openModal={this.onOpenModal}
-        />
+        <ImageGallery namePicture={searchValue} openModal={this.onOpenModal} />
         {isOpen && (
           <Modal closeModal={this.onCloseModal}>
             <ModalImg src={visibleData.largeImageURL} alt={visibleData.tags} />
