@@ -1,4 +1,4 @@
-import { Formik, Form, Field } from 'formik';
+import { Formik, Field } from 'formik';
 import { toast } from 'react-toastify';
 import { ReactComponent as SearchIcon } from '../../icons/search.svg';
 import {
@@ -6,7 +6,6 @@ import {
   StyledForm,
   Input,
   SearchFormButton,
-  SearchFormLabel,
 } from './Searchbar.styled';
 
 const Searchbar = ({ onSubmit }) => {
