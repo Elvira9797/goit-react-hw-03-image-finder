@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { getImages } from '../../services/api';
 import { StyledImageGallery, Wrapper } from './ImageGallery.styled';
 import ImageGalleryItem from '../ImageGalleryItem';
@@ -67,8 +68,6 @@ class ImageGallery extends Component {
   handleMoreImageData = data => {
     const { page } = this.state;
     const totalPages = Math.floor(data.totalHits / 12);
-    console.log(page);
-    console.log(totalPages);
 
     if (page >= totalPages) {
       this.setState({ isLoading: false, showButton: false });
@@ -131,5 +130,10 @@ class ImageGallery extends Component {
     );
   }
 }
+
+ImageGallery.propTypes = {
+  openModal: PropTypes.func.isRequired,
+  namePicture: PropTypes.string.isRequired,
+};
 
 export default ImageGallery;

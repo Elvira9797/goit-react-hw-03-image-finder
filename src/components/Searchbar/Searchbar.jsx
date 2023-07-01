@@ -1,4 +1,5 @@
 import { Formik, Field } from 'formik';
+import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import { ReactComponent as SearchIcon } from '../../icons/search.svg';
 import {
@@ -41,6 +42,10 @@ const Searchbar = ({ onSubmit }) => {
       </Formik>
     </StyledSearchbar>
   );
+};
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default Searchbar;

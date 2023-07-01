@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyledButton } from './Button.styled';
 
 const Button = ({ loadMore, children, isLoading }) => {
@@ -15,6 +16,12 @@ const Button = ({ loadMore, children, isLoading }) => {
       )}
     </>
   );
+};
+
+Button.propTypes = {
+  loadMore: PropTypes.func.isRequired,
+  children: PropTypes.any.isRequired,
+  isLoading: PropTypes.bool.isRequired,
 };
 
 export default Button;
